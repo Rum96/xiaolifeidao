@@ -457,17 +457,14 @@ export default class JsbOppoMiniGame extends JsbBase {
 
     public openVibrateLong() {
         qg.vibrateLong({
-            success: (res) => {
+            success: () => {
                 console.log("openVibrateLong   success");
-                console.log(JSON.stringify(res));
             },
-            fail: (res) => {
+            fail: () => {
                 console.log("openVibrateLong   fail");
-                console.log(JSON.stringify(res));
             },
-            complete: (res) => {
+            complete: () => {
                 console.log("openVibrateLong   complete");
-                console.log(JSON.stringify(res));
             }
         });
     }
@@ -532,7 +529,6 @@ export default class JsbOppoMiniGame extends JsbBase {
         //pkgName: `com.kzy.${name}.nearme.gamecenter`
         qg.navigateToMiniGame({
             pkgName: name
-
         });
     }
 

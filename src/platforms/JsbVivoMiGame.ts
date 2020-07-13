@@ -47,17 +47,14 @@ export default class JsbVivoMiGame extends JsbBase {
 
     openVibrate() {
         qg.vibrateLong({
-            success: (res) => {
+            success: () => {
                 console.log("openVibrateLong   success");
-                console.log(JSON.stringify(res));
             },
-            fail: (res) => {
+            fail: () => {
                 console.log("openVibrateLong   fail");
-                console.log(JSON.stringify(res));
             },
-            complete: (res) => {
+            complete: () => {
                 console.log("openVibrateLong   complete");
-                console.log(JSON.stringify(res));
             }
         });
     }
@@ -387,17 +384,14 @@ export default class JsbVivoMiGame extends JsbBase {
 
     public openVibrateLong() {
         qg.vibrateLong({
-            success: (res) => {
+            success: () => {
                 console.log("openVibrateLong   success");
-                console.log(JSON.stringify(res));
             },
-            fail: (res) => {
+            fail: () => {
                 console.log("openVibrateLong   fail");
-                console.log(JSON.stringify(res));
             },
-            complete: (res) => {
+            complete: () => {
                 console.log("openVibrateLong   complete");
-                console.log(JSON.stringify(res));
             }
         });
     }

@@ -2559,6 +2559,8 @@ interface _getSystemInfoSyncReturnValue {
    * 客户端基础库版本
    */
   SDKVersion: any;
+
+  platformVersionCode
 }
 
 interface _getSystemInfoObject {
@@ -2647,6 +2649,8 @@ interface _getSystemInfoSuccessObject {
    * 客户端基础库版本
    */
   SDKVersion: any;
+
+  platformVersion
 }
 
 interface _getStorageInfoObject {
@@ -4742,7 +4746,7 @@ interface _NativeAd{
   /**
    * 获取广告数据，成功回调 onLoad，失败回调 onError
    */
-  load:()=>void;
+  load:()=>any
   /**
    * 销毁广告组件，释放资源
    */
@@ -4750,11 +4754,11 @@ interface _NativeAd{
   /**
    * 上报广告曝光，一个广告只有一次上报有效，adId 为 load 方法获取的广告数据的 adId 字段
    */
-  reportAdShow:(callback:Function) => void;
+  reportAdShow:(callback:any) => void;
   /**
    * 上报广告点击，一个广告只有一次上报有效，adId 为 load 方法获取的广告数据的 adId 字段
    */
-  reportAdClick:(callback:Function) => void;
+  reportAdClick:(callback:any) => void;
   /**
    * 设置广告加载成功回调
    */
@@ -4858,13 +4862,15 @@ interface _VideoAd{
    * 移除视频广告出错回调
    */
   offError:(callback:Function)=>void;
+
+  onClose(any)
 }
 
 interface _BannerAd{
   /**
    * 调用 load 方法请求展示 banner，成功的时候回调 onShow，出错的时候回调 onError
    */
-  show:()=>void;
+  show:()=>any;
   /**
    * 隐藏 banner，成功回调 onHide, 出错的时候回调 onError
    */
@@ -4893,6 +4899,12 @@ interface _BannerAd{
    * 移除失败回调
    */
   offError:(callback:Function)=>void;
+
+  onLoad(callback)
+
+  onClose(callback)
+
+  destroy()
 }
 
 interface _Battle {
@@ -5173,7 +5185,7 @@ declare namespace qg {
   /**
    * 创建并返回内部 audio 上下文 `innerAudioContext` 对象。
    */
-  export function createInnerAudioContext(): void;
+  export function createInnerAudioContext(): any;
 
   /**
    * 操作对应的 `<live-player/>` 组件。
@@ -6114,5 +6126,14 @@ declare namespace qg {
    */
   export function getTextLineHeight(object:any):void;
 
+  export function reportMonitor(name, type);
+
+  export function hasShortcutInstalled(callback);
+
+  export function installShortcut(callback);
+
+  export function navigateToMiniGame(callback);
+
+  export function createInterstitialAd(callback);
 }
 
