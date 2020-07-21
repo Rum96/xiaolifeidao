@@ -38,12 +38,12 @@ class Main {
 		g_uiM.initEvent()
 
 
-		// PlatfM.init(PlatfT.none);
+		PlatfM.init(PlatfT.none);
 		// PlatfM.init(PlatfT.ooMG);
 		// PlatfM.init(PlatfT.ttMG);
 		// PlatfM.init(PlatfT.vvMG);
 		// PlatfM.init(PlatfT.xmMG);
-		PlatfM.init(PlatfT.qqMG);
+		// PlatfM.init(PlatfT.qqMG);
 
 		// g_constD.isDY = PlatfM.plaft == PlatfT.ttMG
 		g_constD.isTT = PlatfM.plaft == PlatfT.ttMG
@@ -67,16 +67,16 @@ class Main {
 	//先加载可能提前用到的小文件
 	loadConfigFirst() {
 		let loadArr = [
-			"res/config/signin.json",
-			"res/config/skins.json",
-			"res/config/fire.json",
-			"res/config/bossdata.json",
+			// "res/config/signin.json",
+			// "res/config/skins.json",
+			// "res/config/fire.json",
+			// "res/config/bossdata.json",
 
 			"res/atlas/img.atlas",
 			"res/atlas/comp.atlas",
-			"res/atlas/icon.atlas",
-			"res/atlas/push.atlas",
-			"res/atlas/xyx.atlas",
+			// "res/atlas/icon.atlas",
+			// "res/atlas/push.atlas",
+			// "res/atlas/xyx.atlas",
 		]
 		Laya.loader.create(loadArr, new Laya.Handler(this, this.loadConfigLast))
 	}
@@ -87,21 +87,22 @@ class Main {
 		// g_evnetM.DispatchEvent("add_load_view");
 
 		let loadArr = [
-			"res/game/LayaScene_Demo_1/Conventional/Demo_1.ls",
-			"res/game/LayaScene_player/Conventional/player.lh",
-			"res/game/LayaScene_zidan/Conventional/zidan.lh",
+			// "res/game/LayaScene_Demo_1/Conventional/Demo_1.ls",
+			// "res/game/LayaScene_player/Conventional/player.lh",
+			// "res/game/LayaScene_zidan/Conventional/zidan.lh",
 
-			"res/config/signin.json",
-			"res/config/skins.json",
-			"res/config/fire.json",
-			"res/config/bossdata.json",
+			// "res/config/signin.json",
+			// "res/config/skins.json",
+			// "res/config/fire.json",
+			// "res/config/bossdata.json",
+			"res/atlas/push.atlas"
 		]
 
 		let soundArr = [
-			g_constD.BGM,
-			g_constD.sound_win,
-			g_constD.sound_unlock,
-			g_constD.sound_goldbomb,
+			// g_constD.BGM,
+			// g_constD.sound_win,
+			// g_constD.sound_unlock,
+			// g_constD.sound_goldbomb,
 			// g_constD.sound_shoot,
 			// g_constD.sound_shoot2,
 		]
@@ -139,25 +140,25 @@ class Main {
 		PlatfM.initData();
 
 		PlatfM.Jsb.checkIsMiGame((type:SwitchType) => {
-			if(type != SwitchType.On) return
-			let url = "https://kuaizhiyou.com.cn/fenfa/global.json";
-			if(PlatfM.plaft == PlatfT.ttMG){
-				url = "https://kuaizhiyou.com.cn/fenfa_gd/json/global.json";
-			}
-			PubUtils.GetNetJson(url, (res: any[])=> {
-				if (!res) return
-				// console.log("jjjjjjjjjjjj", JSON.stringify(res))
-				for (let i = 0; i < res.length; ++i) {
-					let datai = res[i];
-					if (!datai) continue
-					if (datai.id != g_constD.pushId) continue
-					g_constD.isListActive = datai.list_is_active == "1"
-					g_constD.isLunboActive = datai.lunbo_is_active == "1"
-					g_constD.isJiugongActive = datai.jiugong_is_active == "1"
-					break;
-				}
-			})
-			g_uiM.creatHutuiDlg();
+			// if(type != SwitchType.On) return
+			// let url = "https://kuaizhiyou.com.cn/fenfa/global.json";
+			// if(PlatfM.plaft == PlatfT.ttMG){
+			// 	url = "https://kuaizhiyou.com.cn/fenfa_gd/json/global.json";
+			// }
+			// PubUtils.GetNetJson(url, (res: any[])=> {
+			// 	if (!res) return
+			// 	// console.log("jjjjjjjjjjjj", JSON.stringify(res))
+			// 	for (let i = 0; i < res.length; ++i) {
+			// 		let datai = res[i];
+			// 		if (!datai) continue
+			// 		if (datai.id != g_constD.pushId) continue
+			// 		g_constD.isListActive = datai.list_is_active == "1"
+			// 		g_constD.isLunboActive = datai.lunbo_is_active == "1"
+			// 		g_constD.isJiugongActive = datai.jiugong_is_active == "1"
+			// 		break;
+			// 	}
+			// })
+			// g_uiM.creatHutuiDlg();
 		})
 
 		if (PlatfM.plaft == PlatfT.vvMG) {

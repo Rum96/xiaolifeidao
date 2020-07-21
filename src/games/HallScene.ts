@@ -1,6 +1,7 @@
 import { ui } from "../ui/layaMaxUI";
 import g_evnetM from "../common/EventManager";
 import PlatfM from "../platforms/PlatformManager";
+import g_uiM from "./UiManager";
 
 export default class HallScene extends ui.HallSceneUI {
 
@@ -22,6 +23,8 @@ export default class HallScene extends ui.HallSceneUI {
     }
 
     openIngame(isopen: boolean = false) {
+        g_uiM.gamescene.visible = true
+        g_uiM.hallscene.visible = false
     }
 
     initMouseEvent() {
@@ -72,6 +75,8 @@ export default class HallScene extends ui.HallSceneUI {
 
         PlatfM.Jsb.reportMonitor();
         this.checkShortcut()
+
+        this.openIngame()
     }
 
     startGame() {

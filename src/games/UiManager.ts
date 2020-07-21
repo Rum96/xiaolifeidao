@@ -73,11 +73,11 @@ class UiManager {
     }
 
     playBGM() {
-        PlatfM.Jsb.playMusic(g_constD.BGM, 0);
+        // PlatfM.Jsb.playMusic(g_constD.BGM, 0);
     }
 
     stopBGM() {
-        PlatfM.Jsb.stopMusic();
+        // PlatfM.Jsb.stopMusic();
     }
 
     playSound(url: string, loop: boolean = false) {
@@ -134,6 +134,9 @@ class UiManager {
     creatDlg() {
         this.hallscene = Laya.stage.addChild(new HallScene) as HallScene;
         this.hallscene.zOrder = 100;
+
+        this.gamescene = Laya.stage.addChild(new GameScene) as GameScene;
+        this.gamescene.zOrder = 80;
 
         this.goldView = Laya.stage.addChild(new GoldView) as GoldView;
         this.goldView.zOrder = 250

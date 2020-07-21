@@ -5,7 +5,7 @@ import Scene=Laya.Scene;
 var REG: Function = Laya.ClassUtils.regClass;
 export module ui {
     export class CutterNodeUI extends View {
-        public static  uiView:any ={"type":"View","props":{"width":100,"height":100},"compId":2,"child":[{"type":"Image","props":{"y":18,"x":50,"skin":"comp/img_bg5.png","anchorX":0.5},"compId":3}],"loadList":["comp/img_bg5.png"],"loadList3D":[]};
+        public static  uiView:any ={"type":"View","props":{"y":115,"x":19,"width":38,"height":115,"anchorY":1,"anchorX":0.5},"compId":2,"child":[{"type":"Image","props":{"y":57,"x":19,"width":115,"skin":"img/cutter.png","rotation":90,"height":38,"anchorY":0.5,"anchorX":0.5},"compId":3}],"loadList":["img/cutter.png"],"loadList3D":[]};
         constructor(){ super()}
         createChildren():void {
             super.createChildren();
@@ -14,7 +14,8 @@ export module ui {
     }
     REG("ui.CutterNodeUI",CutterNodeUI);
     export class GameSceneUI extends Scene {
-        public static  uiView:any ={"type":"Scene","props":{"width":720,"height":1600},"loadList":[],"loadList3D":[]};
+		public img_target:Laya.Image;
+        public static  uiView:any ={"type":"Scene","props":{"width":720,"height":1600},"compId":2,"child":[{"type":"Image","props":{"y":470,"x":360,"var":"img_target","skin":"img/target.png","anchorY":0.5,"anchorX":0.5},"compId":3}],"loadList":["img/target.png"],"loadList3D":[]};
         constructor(){ super()}
         createChildren():void {
             super.createChildren();
@@ -49,7 +50,7 @@ export module ui {
 		public img_prg1:Laya.Image;
 		public img_prg2:Laya.Image;
 		public img_logo:Laya.Image;
-        public static  uiView:any ={"type":"Scene","props":{"width":720,"height":1280},"compId":2,"child":[{"type":"Image","props":{"y":0,"x":0,"width":720,"var":"img_bg","height":1600},"compId":16},{"type":"Label","props":{"y":1058,"x":360,"var":"label_loadtext","text":"资源加载中,请稍后！","fontSize":36,"font":"Microsoft YaHei","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5},"compId":3},{"type":"Image","props":{"y":947,"x":135,"width":450,"var":"img_prg1","sizeGrid":"16,90,18,50"},"compId":18},{"type":"Image","props":{"y":951,"x":141,"width":438,"var":"img_prg2","sizeGrid":"16,53,11,38","height":40},"compId":19},{"type":"Image","props":{"y":499,"x":360,"var":"img_logo","anchorY":0.5,"anchorX":0.5},"compId":33}],"loadList":[],"loadList3D":[]};
+        public static  uiView:any ={"type":"Scene","props":{"width":720,"height":1280},"compId":2,"child":[{"type":"Image","props":{"y":0,"x":0,"width":720,"var":"img_bg","skin":"loading/img_loading_bg.png","height":1600},"compId":16},{"type":"Label","props":{"y":1058,"x":360,"var":"label_loadtext","text":"资源加载中,请稍后！","fontSize":36,"font":"Microsoft YaHei","color":"#ffffff","bold":true,"anchorY":0.5,"anchorX":0.5},"compId":3},{"type":"Image","props":{"y":947,"x":135,"width":450,"var":"img_prg1","skin":"loading/img_jdt_bg.png","sizeGrid":"16,90,18,50"},"compId":18},{"type":"Image","props":{"y":951,"x":141,"width":438,"var":"img_prg2","skin":"loading/img_jdt.png","sizeGrid":"16,53,11,38","height":40},"compId":19},{"type":"Image","props":{"y":499,"x":360,"var":"img_logo","skin":"loading/img_logo.png","anchorY":0.5,"anchorX":0.5},"compId":33}],"loadList":["loading/img_loading_bg.png","loading/img_jdt_bg.png","loading/img_jdt.png","loading/img_logo.png"],"loadList3D":[]};
         constructor(){ super()}
         createChildren():void {
             super.createChildren();
@@ -67,4 +68,19 @@ export module ui {
         }
     }
     REG("ui.TipViewUI",TipViewUI);
+    export class ttPushUI extends View {
+		public shareBox:Laya.Box;
+		public share:Laya.Image;
+		public btn_bgShare:Laya.Image;
+		public btn_video:Laya.Image;
+		public btn_share:Laya.Image;
+		public hide_share:Laya.Image;
+        public static  uiView:any ={"type":"View","props":{"zOrder":1000,"width":720,"visible":false,"mouseThrough":true,"hitTestPrior":false,"height":1280},"compId":2,"child":[{"type":"Box","props":{"visible":false,"var":"shareBox"},"compId":65,"child":[{"type":"Box","props":{"width":720,"height":1600,"bgColor":"#000000","alpha":0.8},"compId":66},{"type":"Image","props":{"y":300,"x":42,"var":"share","skin":"push/img_share_bg.png","scaleY":0.9,"scaleX":0.9},"compId":46,"child":[{"type":"Image","props":{"y":108,"x":56,"width":600,"var":"btn_bgShare","skin":"push/bg_share.png","height":300},"compId":72},{"type":"Image","props":{"y":160,"x":262,"var":"btn_video","skin":"push/img_play.png"},"compId":67},{"type":"Image","props":{"y":414,"x":300,"skin":"img/img_gold.png"},"compId":70},{"type":"Label","props":{"y":424,"x":360,"text":"+200","fontSize":36,"font":"SimSun","color":"#fff","bold":true},"compId":71},{"type":"Image","props":{"y":541,"x":201,"var":"btn_share","skin":"img/btn_yellow.png"},"compId":48,"child":[{"type":"Sprite","props":{"y":32,"x":49,"texture":"img/txt_7.png"},"compId":69}]},{"type":"Image","props":{"y":670,"x":285,"var":"hide_share","skin":"push/txt_nothanks.png"},"compId":68}]}]}],"loadList":["push/img_share_bg.png","push/bg_share.png","push/img_play.png","img/img_gold.png","img/btn_yellow.png","img/txt_7.png","push/txt_nothanks.png"],"loadList3D":[]};
+        constructor(){ super()}
+        createChildren():void {
+            super.createChildren();
+            this.createView(ttPushUI.uiView);
+        }
+    }
+    REG("ui.ttPushUI",ttPushUI);
 }

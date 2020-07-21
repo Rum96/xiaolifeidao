@@ -13,11 +13,6 @@ export default class LoadView extends ui.LoadViewUI {
         this.constcW = this.img_prg2.width - 20
         this.label_loadtext.text = ""
         this.img_prg2.width = 1
-
-        this.img_bg.skin = "loading/img_loading_bg.png"
-        this.img_prg1.skin = "loading/img_jdt_bg.png"
-        this.img_prg2.skin = "loading/img_jdt.png"
-        this.img_logo.skin = "loading/img_logo.png"
     }
 
     downTip(res) {
