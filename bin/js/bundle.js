@@ -14,7 +14,7 @@
     GameConfig.screenMode = "vertical";
     GameConfig.alignV = "top";
     GameConfig.alignH = "left";
-    GameConfig.startScene = "LoadView.scene";
+    GameConfig.startScene = "CutterNode.scene";
     GameConfig.sceneRoot = "";
     GameConfig.debug = false;
     GameConfig.stat = false;
@@ -731,7 +731,7 @@
                 this.createView(CutterNodeUI.uiView);
             }
         }
-        CutterNodeUI.uiView = { "type": "View", "props": { "y": 115, "x": 19, "width": 38, "height": 115, "anchorY": 1, "anchorX": 0.5 }, "compId": 2, "child": [{ "type": "Image", "props": { "y": 57, "x": 19, "width": 115, "skin": "img/cutter.png", "rotation": 90, "height": 38, "anchorY": 0.5, "anchorX": 0.5 }, "compId": 3 }], "loadList": ["img/cutter.png"], "loadList3D": [] };
+        CutterNodeUI.uiView = { "type": "View", "props": { "y": 0, "x": 19, "width": 38, "height": 115, "anchorX": 0.5 }, "compId": 2, "child": [{ "type": "Image", "props": { "y": 57, "x": 19, "width": 115, "skin": "img/cutter.png", "rotation": 90, "height": 38, "anchorY": 0.5, "anchorX": 0.5 }, "compId": 3 }], "loadList": ["img/cutter.png"], "loadList3D": [] };
         ui.CutterNodeUI = CutterNodeUI;
         REG("ui.CutterNodeUI", CutterNodeUI);
         class GameSceneUI extends Scene {

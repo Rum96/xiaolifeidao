@@ -10,7 +10,7 @@ export default class GameConfig{
     static screenMode:string="vertical";
     static alignV:string="top";
     static alignH:string="left";
-    static startScene:any="LoadView.scene";
+    static startScene:any="CutterNode.scene";
     static sceneRoot:string="";
     static debug:boolean=false;
     static stat:boolean=false;

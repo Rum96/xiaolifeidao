@@ -5,7 +5,7 @@ import Scene=Laya.Scene;
 var REG: Function = Laya.ClassUtils.regClass;
 export module ui {
     export class CutterNodeUI extends View {
-        public static  uiView:any ={"type":"View","props":{"y":115,"x":19,"width":38,"height":115,"anchorY":1,"anchorX":0.5},"compId":2,"child":[{"type":"Image","props":{"y":57,"x":19,"width":115,"skin":"img/cutter.png","rotation":90,"height":38,"anchorY":0.5,"anchorX":0.5},"compId":3}],"loadList":["img/cutter.png"],"loadList3D":[]};
+        public static  uiView:any ={"type":"View","props":{"y":0,"x":19,"width":38,"height":115,"anchorX":0.5},"compId":2,"child":[{"type":"Image","props":{"y":57,"x":19,"width":115,"skin":"img/cutter.png","rotation":90,"height":38,"anchorY":0.5,"anchorX":0.5},"compId":3}],"loadList":["img/cutter.png"],"loadList3D":[]};
         constructor(){ super()}
         createChildren():void {
             super.createChildren();
